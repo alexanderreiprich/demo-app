@@ -42,6 +42,14 @@
     "amplifyApiModelSchemaS3Uri",
     "awsAppsyncAdditionalAuthenticationTypes"
    ]
+  },
+  "AWS::Amplify::Storage": {
+   "version": "1",
+   "stackOutputs": [
+    "buckets",
+    "storageRegion",
+    "bucketName"
+   ]
   }
  },
  "Outputs": {
@@ -195,6 +203,40 @@
   },
   "awsAppsyncAdditionalAuthenticationTypes": {
    "Value": "AMAZON_COGNITO_USER_POOLS"
+  },
+  "storageRegion": {
+   "Value": {
+    "Ref": "AWS::Region"
+   }
+  },
+  "bucketName": {
+   "Value": {
+    "Fn::GetAtt": [
+     "storage0EC3F24A",
+     "Outputs.amplifydemoappal3xzsandbox0fc9d2b670storageamplifyTeamDriveBucketF1FA39F1Ref"
+    ]
+   }
+  },
+  "buckets": {
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "[\"{\\\"name\\\":\\\"amplifyTeamDrive\\\",\\\"bucketName\\\":\\\"",
+      {
+       "Fn::GetAtt": [
+        "storage0EC3F24A",
+        "Outputs.amplifydemoappal3xzsandbox0fc9d2b670storageamplifyTeamDriveBucketF1FA39F1Ref"
+       ]
+      },
+      "\\\",\\\"storageRegion\\\":\\\"",
+      {
+       "Ref": "AWS::Region"
+      },
+      "\\\"}\"]"
+     ]
+    ]
+   }
   }
  },
  "Resources": {
@@ -305,6 +347,48 @@
    "Metadata": {
     "aws:cdk:path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/data.NestedStack/data.NestedStackResource",
     "aws:asset:path": "amplifydemoappal3xzsandbox0fc9d2b670data9A54FFF0.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "storage0EC3F24A": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/c97be3123a77466ae94f39b5c06bb8b8e6d7cdbd62c71fd62b928411c55a14fa.json"
+      ]
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage.NestedStack/storage.NestedStackResource",
+    "aws:asset:path": "amplifydemoappal3xzsandbox0fc9d2b670storage1FD4809A.nested.template.json",
     "aws:asset:property": "TemplateURL"
    }
   },

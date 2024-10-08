@@ -23,7 +23,7 @@
         "notificationArns": [],
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d3ad36cf578940cfdd6f51afa0aa8c2ce967c9b4ea2e22b3b3664e1a54061943.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/44f039c330fca2cfef07bf720a24cea601ac029dc246f9707bb02d786623bc58.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -1108,6 +1108,90 @@
           {
             "type": "aws:cdk:logicalId",
             "data": "awsAppsyncAdditionalAuthenticationTypes"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyTeamDriveBucket28B5C701"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyTeamDriveBucketPolicy20828FCE"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket/AutoDeleteObjectsCustomResource/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyTeamDriveBucketAutoDeleteObjectsCustomResource671F9F2A"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/LatestNodeRuntimeMap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "LatestNodeRuntimeMap"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/Custom::S3AutoDeleteObjectsCustomResourceProvider": [
+          {
+            "type": "aws:cdk:is-custom-resource-handler-customResourceProvider",
+            "data": true
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifydemoappal3xzsandbox0fc9d2b670storageamplifyTeamDriveBucketF1FA39F1Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifydemoappal3xzsandbox0fc9d2b670storageamplifyTeamDriveBucketF1FA39F1Ref"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage.NestedStack/storage.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "storage0EC3F24A"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/storageRegion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "storageRegion"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/bucketName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "bucketName"
+          }
+        ],
+        "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/buckets": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "buckets"
           }
         ],
         "/amplify-demoapp-al3xz-sandbox-0fc9d2b670/CDKMetadata/Default": [

@@ -5949,6 +5949,368 @@
               "version": "2.161.1"
             }
           },
+          "storage": {
+            "id": "storage",
+            "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage",
+            "children": {
+              "amplifyTeamDrive": {
+                "id": "amplifyTeamDrive",
+                "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive",
+                "children": {
+                  "Bucket": {
+                    "id": "Bucket",
+                    "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket",
+                    "children": {
+                      "Resource": {
+                        "id": "Resource",
+                        "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket/Resource",
+                        "attributes": {
+                          "aws:cdk:cloudformation:type": "AWS::S3::Bucket",
+                          "aws:cdk:cloudformation:props": {
+                            "corsConfiguration": {
+                              "corsRules": [
+                                {
+                                  "maxAge": 3000,
+                                  "allowedHeaders": [
+                                    "*"
+                                  ],
+                                  "allowedMethods": [
+                                    "GET",
+                                    "HEAD",
+                                    "PUT",
+                                    "POST",
+                                    "DELETE"
+                                  ],
+                                  "allowedOrigins": [
+                                    "*"
+                                  ],
+                                  "exposedHeaders": [
+                                    "x-amz-server-side-encryption",
+                                    "x-amz-request-id",
+                                    "x-amz-id-2",
+                                    "ETag"
+                                  ]
+                                }
+                              ]
+                            },
+                            "tags": [
+                              {
+                                "key": "amplify:deployment-type",
+                                "value": "sandbox"
+                              },
+                              {
+                                "key": "amplify:friendly-name",
+                                "value": "amplifyTeamDrive"
+                              },
+                              {
+                                "key": "aws-cdk:auto-delete-objects",
+                                "value": "true"
+                              },
+                              {
+                                "key": "created-by",
+                                "value": "amplify"
+                              }
+                            ]
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.CfnBucket",
+                          "version": "2.161.1"
+                        }
+                      },
+                      "Policy": {
+                        "id": "Policy",
+                        "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket/Policy",
+                        "children": {
+                          "Resource": {
+                            "id": "Resource",
+                            "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket/Policy/Resource",
+                            "attributes": {
+                              "aws:cdk:cloudformation:type": "AWS::S3::BucketPolicy",
+                              "aws:cdk:cloudformation:props": {
+                                "bucket": {
+                                  "Ref": "amplifyTeamDriveBucket28B5C701"
+                                },
+                                "policyDocument": {
+                                  "Statement": [
+                                    {
+                                      "Action": "s3:*",
+                                      "Condition": {
+                                        "Bool": {
+                                          "aws:SecureTransport": "false"
+                                        }
+                                      },
+                                      "Effect": "Deny",
+                                      "Principal": {
+                                        "AWS": "*"
+                                      },
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "amplifyTeamDriveBucket28B5C701",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "amplifyTeamDriveBucket28B5C701",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "Action": [
+                                        "s3:PutBucketPolicy",
+                                        "s3:GetBucket*",
+                                        "s3:List*",
+                                        "s3:DeleteObject*"
+                                      ],
+                                      "Effect": "Allow",
+                                      "Principal": {
+                                        "AWS": {
+                                          "Fn::GetAtt": [
+                                            "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                                            "Arn"
+                                          ]
+                                        }
+                                      },
+                                      "Resource": [
+                                        {
+                                          "Fn::GetAtt": [
+                                            "amplifyTeamDriveBucket28B5C701",
+                                            "Arn"
+                                          ]
+                                        },
+                                        {
+                                          "Fn::Join": [
+                                            "",
+                                            [
+                                              {
+                                                "Fn::GetAtt": [
+                                                  "amplifyTeamDriveBucket28B5C701",
+                                                  "Arn"
+                                                ]
+                                              },
+                                              "/*"
+                                            ]
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  ],
+                                  "Version": "2012-10-17"
+                                }
+                              }
+                            },
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.aws_s3.CfnBucketPolicy",
+                              "version": "2.161.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.aws_s3.BucketPolicy",
+                          "version": "2.161.1"
+                        }
+                      },
+                      "AutoDeleteObjectsCustomResource": {
+                        "id": "AutoDeleteObjectsCustomResource",
+                        "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket/AutoDeleteObjectsCustomResource",
+                        "children": {
+                          "Default": {
+                            "id": "Default",
+                            "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifyTeamDrive/Bucket/AutoDeleteObjectsCustomResource/Default",
+                            "constructInfo": {
+                              "fqn": "aws-cdk-lib.CfnResource",
+                              "version": "2.161.1"
+                            }
+                          }
+                        },
+                        "constructInfo": {
+                          "fqn": "aws-cdk-lib.CustomResource",
+                          "version": "2.161.1"
+                        }
+                      }
+                    },
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.aws_s3.Bucket",
+                      "version": "2.161.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.3.0"
+                }
+              },
+              "LatestNodeRuntimeMap": {
+                "id": "LatestNodeRuntimeMap",
+                "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/LatestNodeRuntimeMap",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnMapping",
+                  "version": "2.161.1"
+                }
+              },
+              "Custom::S3AutoDeleteObjectsCustomResourceProvider": {
+                "id": "Custom::S3AutoDeleteObjectsCustomResourceProvider",
+                "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/Custom::S3AutoDeleteObjectsCustomResourceProvider",
+                "children": {
+                  "Staging": {
+                    "id": "Staging",
+                    "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/Custom::S3AutoDeleteObjectsCustomResourceProvider/Staging",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.AssetStaging",
+                      "version": "2.161.1"
+                    }
+                  },
+                  "Role": {
+                    "id": "Role",
+                    "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.161.1"
+                    }
+                  },
+                  "Handler": {
+                    "id": "Handler",
+                    "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.161.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CustomResourceProviderBase",
+                  "version": "2.161.1"
+                }
+              },
+              "CDKMetadata": {
+                "id": "CDKMetadata",
+                "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/CDKMetadata",
+                "children": {
+                  "Default": {
+                    "id": "Default",
+                    "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/CDKMetadata/Default",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnResource",
+                      "version": "2.161.1"
+                    }
+                  },
+                  "Condition": {
+                    "id": "Condition",
+                    "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/CDKMetadata/Condition",
+                    "constructInfo": {
+                      "fqn": "aws-cdk-lib.CfnCondition",
+                      "version": "2.161.1"
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "constructs.Construct",
+                  "version": "10.3.0"
+                }
+              },
+              "amplifydemoappal3xzsandbox0fc9d2b670storageamplifyTeamDriveBucketF1FA39F1Ref": {
+                "id": "amplifydemoappal3xzsandbox0fc9d2b670storageamplifyTeamDriveBucketF1FA39F1Ref",
+                "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage/amplifydemoappal3xzsandbox0fc9d2b670storageamplifyTeamDriveBucketF1FA39F1Ref",
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnOutput",
+                  "version": "2.161.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.NestedStack",
+              "version": "2.161.1"
+            }
+          },
+          "storage.NestedStack": {
+            "id": "storage.NestedStack",
+            "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage.NestedStack",
+            "children": {
+              "storage.NestedStackResource": {
+                "id": "storage.NestedStackResource",
+                "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storage.NestedStack/storage.NestedStackResource",
+                "attributes": {
+                  "aws:cdk:cloudformation:type": "AWS::CloudFormation::Stack",
+                  "aws:cdk:cloudformation:props": {
+                    "tags": [
+                      {
+                        "key": "amplify:deployment-type",
+                        "value": "sandbox"
+                      },
+                      {
+                        "key": "created-by",
+                        "value": "amplify"
+                      }
+                    ],
+                    "templateUrl": {
+                      "Fn::Join": [
+                        "",
+                        [
+                          "https://s3.",
+                          {
+                            "Ref": "AWS::Region"
+                          },
+                          ".",
+                          {
+                            "Ref": "AWS::URLSuffix"
+                          },
+                          "/",
+                          {
+                            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+                          },
+                          "/c97be3123a77466ae94f39b5c06bb8b8e6d7cdbd62c71fd62b928411c55a14fa.json"
+                        ]
+                      ]
+                    }
+                  }
+                },
+                "constructInfo": {
+                  "fqn": "aws-cdk-lib.CfnStack",
+                  "version": "2.161.1"
+                }
+              }
+            },
+            "constructInfo": {
+              "fqn": "constructs.Construct",
+              "version": "10.3.0"
+            }
+          },
+          "storageRegion": {
+            "id": "storageRegion",
+            "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/storageRegion",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.161.1"
+            }
+          },
+          "bucketName": {
+            "id": "bucketName",
+            "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/bucketName",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.161.1"
+            }
+          },
+          "buckets": {
+            "id": "buckets",
+            "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/buckets",
+            "constructInfo": {
+              "fqn": "aws-cdk-lib.CfnOutput",
+              "version": "2.161.1"
+            }
+          },
           "CDKMetadata": {
             "id": "CDKMetadata",
             "path": "amplify-demoapp-al3xz-sandbox-0fc9d2b670/CDKMetadata",

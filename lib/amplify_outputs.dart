@@ -104,5 +104,16 @@ const amplifyConfig = '''{
       "nonModels": {}
     }
   },
+  "storage": {
+    "aws_region": "eu-central-1",
+    "bucket_name": "amplify-demoapp-al3xz-san-amplifyteamdrivebucket28-0izs7ppcbgob",
+    "buckets": [
+      {
+        "name": "amplifyTeamDrive",
+        "bucket_name": "amplify-demoapp-al3xz-san-amplifyteamdrivebucket28-0izs7ppcbgob",
+        "aws_region": "eu-central-1"
+      }
+    ]
+  },
   "version": "1.2"
 }''';
