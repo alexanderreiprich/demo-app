@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'firebase_options.dart';
-
 import 'amplify_outputs.dart';
 
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
@@ -18,12 +17,14 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 Future<void> main() async {
   try {
     WidgetsFlutterBinding.ensureInitialized();
+
+    // Initialize Firebase Messaging
     await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
     FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-    FirebaseMessaging messaging = FirebaseMessaging.instance;
     final notificationSettings = await FirebaseMessaging.instance.requestPermission(provisional: true);
-
     safePrint('User granted permission: ${notificationSettings.authorizationStatus}');
+
+    // Configure Amplify and run App
     await _configureAmplify();
     runApp(const MyApp());
   } on AmplifyException catch (e) {
@@ -49,9 +50,10 @@ class MyApp extends StatelessWidget {
     return Authenticator(
       child: MaterialApp(
         builder: Authenticator.builder(),
-        home: Scaffold(
+        home: const Scaffold(
           body: Center(
-            child: SizedBox(height: 100, width: 100, child: ImagePickerWidget()),
+            child:
+                SizedBox(height: 100, width: 100, child: ImagePickerWidget()),
           ),
         ),
       ),

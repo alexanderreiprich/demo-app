@@ -3,15 +3,17 @@ import 'package:flutter/material.dart';
 
 
 class ImagePickerWidget extends StatefulWidget {
+  const ImagePickerWidget({super.key});
+
   @override
-  _ImagePickerWidgetState createState() => _ImagePickerWidgetState();
+  ImagePickerWidgetState createState() => ImagePickerWidgetState();
 }
 
-class _ImagePickerWidgetState extends State<ImagePickerWidget> {
+class ImagePickerWidgetState extends State<ImagePickerWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(child: const Text("Ahoi!"), onPressed: () async {
+    return MaterialButton(child: const Text("Hier klicken!"), onPressed: () async {
       var file = await FileHelper.getFileFromSystem();
       if (file != null) {
         FileHelper.uploadImage(file);
