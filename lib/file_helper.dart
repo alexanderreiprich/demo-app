@@ -10,9 +10,9 @@ class FileHelper {
     XFile? chosenFile = await picker.pickImage(source: ImageSource.gallery);
 
     // Convert image data to custom object
-    if (chosenFile != null && chosenFile.mimeType != null) {
+    if (chosenFile != null) {
       var data = await chosenFile.readAsBytes();
-      var imageData = ImageData(data, chosenFile.mimeType!);
+      var imageData = ImageData(data, chosenFile.mimeType);
       return imageData;
     }
     return null;
