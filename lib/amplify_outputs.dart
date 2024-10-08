@@ -1,9 +1,9 @@
 const amplifyConfig = '''{
   "auth": {
-    "user_pool_id": "eu-central-1_ZtSrXLhzV",
+    "user_pool_id": "eu-central-1_lxu2alNhp",
     "aws_region": "eu-central-1",
-    "user_pool_client_id": "3aicg851ma7mtu53hemhemtkh4",
-    "identity_pool_id": "eu-central-1:eebe8290-4c5a-4e8c-b099-519a53a22ae6",
+    "user_pool_client_id": "146rqooktg6fkp472jko8dmvc5",
+    "identity_pool_id": "eu-central-1:9dd4f68d-d735-4a30-a594-94ed961fee68",
     "mfa_methods": [],
     "standard_required_attributes": [
       "email"
@@ -25,7 +25,7 @@ const amplifyConfig = '''{
     "unauthenticated_identities_enabled": true
   },
   "data": {
-    "url": "https://qu4kh2g6inb7zadg2zhlbxfb7m.appsync-api.eu-central-1.amazonaws.com/graphql",
+    "url": "https://6jb453lzhbgwhpdiofyadmxd5u.appsync-api.eu-central-1.amazonaws.com/graphql",
     "aws_region": "eu-central-1",
     "default_authorization_type": "AWS_IAM",
     "authorization_types": [
@@ -106,14 +106,14 @@ const amplifyConfig = '''{
   },
   "storage": {
     "aws_region": "eu-central-1",
-    "bucket_name": "amplify-demoapp-al3xz-san-amplifyteamdrivebucket28-0izs7ppcbgob",
+    "bucket_name": "amplify-dkje9t58db7jv-mai-amplifyteamdrivebucket28-hkiqeozshfs1",
     "buckets": [
       {
         "name": "amplifyTeamDrive",
-        "bucket_name": "amplify-demoapp-al3xz-san-amplifyteamdrivebucket28-0izs7ppcbgob",
+        "bucket_name": "amplify-dkje9t58db7jv-mai-amplifyteamdrivebucket28-hkiqeozshfs1",
         "aws_region": "eu-central-1"
       }
     ]
   },
-  "version": "1.2"
-}''';
+  "version": "1.1"
+  }''';
